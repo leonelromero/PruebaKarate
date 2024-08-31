@@ -1,0 +1,36 @@
+Conclusiones sobre las Pruebas de la API de PetStore
+
+Hallazgos
+
+1. Añadir una mascota a la tienda:**
+   - El endpoint de añadir mascotas funcionó correctamente, y la mascota se añadió con éxito a la tienda.
+   - No se identificaron problemas en la estructura de la respuesta ni en los tiempos de respuesta.
+
+2. Consultar la mascota ingresada previamente (Búsqueda por ID):
+   - La consulta por ID devolvió la información correcta de la mascota.
+   - El tiempo de respuesta fue óptimo, y los datos de la mascota coincidieron con los datos ingresados previamente.
+
+3. Actualizar el nombre y el estatus de la mascota a “sold”:
+   - El endpoint para actualizar la mascota permitió cambiar el nombre y el estado sin inconvenientes.
+   - El estatus actualizado a `sold` se reflejó inmediatamente en la base de datos.
+
+4. Consultar la mascota modificada por estatus (Búsqueda por estatus):
+   - La búsqueda por estatus devolvió una lista de mascotas, incluyendo la mascota recién actualizada.
+   - Se verificó que el filtro por estatus funcionó correctamente.
+
+Conclusiones
+
+- Eficiencia de la API: La API de PetStore es eficiente en cuanto a los tiempos de respuesta y manejo de solicitudes básicas como CRUD de mascotas.
+- Confiabilidad de los Endpoints: Todos los endpoints probados mostraron ser confiables y coherentes en las respuestas.
+- Facilidad de Uso: Karate demostró ser una herramienta poderosa para pruebas de API, permitiendo una fácil escritura y mantenimiento de casos de prueba.
+
+Retos Enfrentados
+
+1. Gestión de IDs Únicos:
+   - Al utilizar IDs estáticos en las pruebas, es posible que se encuentren conflictos si la mascota ya existe. La solución fue generar IDs aleatorios o asegurarse de que los IDs utilizados no existan previamente en la base de datos.
+   
+2. Manejo de Respuestas Dinámicas:
+   - En algunos casos, las respuestas de la API pueden variar dependiendo de los datos existentes en la base de datos. Esto requirió validar las respuestas con condiciones más flexibles.
+
+3. Configuración del Entorno:
+   - Fue necesario asegurarse de que el entorno local estuviera correctamente configurado con Java, Maven y las dependencias de Karate.
